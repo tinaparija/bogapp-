@@ -1,6 +1,14 @@
 <h1>Creatures</h1>
+<nav>
+	<%= link_to "Existing", creatures_path %>
+	<%= link_to "New", new_creature_path %>
+<br> 
+<br> 
+</nav>
+
 <% @creatures.each do |creature| %>
   <p>Name: <%= creature.name %></p>
   <p>Description: <%= creature.description %></p>
   <br>
+  <a href="/creatures/<%= creature.id %>">Show page</a> <!-- TODO: smelly -->
 <% end %>
